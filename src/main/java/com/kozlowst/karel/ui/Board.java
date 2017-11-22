@@ -1,8 +1,8 @@
 package com.kozlowst.karel.ui;
 
-import com.kozlowst.karel.world.World;
 import com.kozlowst.karel.command.Command;
 import com.kozlowst.karel.executor.CommandExecutor;
+import com.kozlowst.karel.world.World;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

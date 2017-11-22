@@ -1,7 +1,7 @@
 package com.kozlowst.karel.command;
 
-import com.kozlowst.karel.world.World;
 import com.kozlowst.karel.message.Direction;
+import com.kozlowst.karel.world.World;
 
 import java.awt.*;
 
