@@ -11,6 +11,8 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Ignore;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -96,5 +98,10 @@ public class NewGameSteps {
         verify(graphics2D, times(count)).drawLine(anyInt(), anyInt(), anyInt(), anyInt());
     }
 
+    @Test
+    @Ignore
+    public void test() {
+
+    }
 
 }
