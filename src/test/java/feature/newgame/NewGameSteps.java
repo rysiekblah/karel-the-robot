@@ -1,15 +1,18 @@
 package feature.newgame;
 
-import com.kozlowst.karel.world.World;
 import com.kozlowst.karel.command.CreateGameCmd;
 import com.kozlowst.karel.command.DrawWallCmd;
 import com.kozlowst.karel.executor.CommandExecutor;
 import com.kozlowst.karel.handler.Handler;
 import com.kozlowst.karel.message.Direction;
 import com.kozlowst.karel.message.MessageType;
+import com.kozlowst.karel.world.World;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Ignore;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -41,10 +44,13 @@ public class NewGameSteps {
     @InjectMocks
     private Handler handler;
 
+    @Before
+    public void init() {
+        MockitoAnnotations.initMocks(this);
+    }
+
     @Given("^a message handler and window properties width='(\\d+)' heigh='(\\d+)' granulation='(\\d+)'")
     public void testGiven(int width, int heigh, int granulation) {
-
-        MockitoAnnotations.initMocks(this);
 
         ReflectionTestUtils.setField(world, "heigh", heigh);
         ReflectionTestUtils.setField(world, "width", width);
@@ -92,5 +98,10 @@ public class NewGameSteps {
         verify(graphics2D, times(count)).drawLine(anyInt(), anyInt(), anyInt(), anyInt());
     }
 
+    @Test
+    @Ignore
+    public void test() {
+
+    }
 
 }

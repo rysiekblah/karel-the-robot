@@ -6,7 +6,6 @@ import com.kozlowst.karel.message.MessageDescriptor;
 import com.kozlowst.karel.message.Parser;
 import com.kozlowst.karel.message.Side;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component

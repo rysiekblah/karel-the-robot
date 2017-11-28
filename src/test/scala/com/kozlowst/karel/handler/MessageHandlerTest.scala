@@ -41,7 +41,7 @@ class MessageHandlerTest extends ApiTestSpec(classOf[MessageHandler]) with Befor
 
   it should "publish CreateRobot command when gets -R x y d" in {
     handler.handleMessage("-R 1 2 1")
-    verify(MessageHandlerTest.ex, times(1)).publishCommand(isA(classOf[CreateRobotCmd]))
+    verify(MessageHandlerTest.ex, times(1)).publishCommand(isA(classOf[PutRobotCmd]))
   }
 
   it should "publish PutBeeper command when gets -B x y n" in {
@@ -66,7 +66,10 @@ object MessageHandlerTest {
   val ex: CommandExecutor = Mockito.mock(classOf[CommandExecutor])
 
   @Configuration
-  @ComponentScan(excludeFilters = Array(new ComponentScan.Filter(`type` = FilterType.REGEX, pattern=Array("com.kozlowst.karel.ui.*"))))
+  @ComponentScan(
+    basePackages=Array("com.kozlowst.karel"),
+    excludeFilters = Array(new ComponentScan.Filter(`type` = FilterType.REGEX, pattern=Array("com.kozlowst.karel.ui.*")))
+  )
   @PropertySource(Array("classpath:properties/ui.properties"))
   class TestConfig {
     @Bean def commandExec:CommandExecutor = ex
